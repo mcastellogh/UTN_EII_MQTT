@@ -37,11 +37,11 @@ void App_setup(void){
 
     //--Init configs
     config.device="nivciscem01";
-    config.ssid="DI_SSP";
-    config.ssid_pass="B1gK4hun4Burg3r";
+    config.ssid="MAC_E";
+    config.ssid_pass="wpaadministrator08";
     config.ap_ssid=config.device;
     config.ap_pass="12345678";
-    config.mqtt_server="mcastello.dyndns.org";
+    config.mqtt_server="192.168.1.25";
     config.mqtt_tcp=8883;
 
     //--WiFi initialization
@@ -55,5 +55,5 @@ void App_setup(void){
 
     //--Presentation
     Serial.println("\r\nCátedra de Electrónica II UTN-FRRO");
-    Serial.println("Connection and maintain WiFi network and MQTT server");
+    Serial.println("Connection and publish data to MQTT broker");
 }
