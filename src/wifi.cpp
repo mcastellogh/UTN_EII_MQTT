@@ -8,6 +8,7 @@
 //=======================================================================
 
 #include "wifi.h"
+
 //--Local variables
 uint32_t _wifi_crono;
 uint8_t _wifi_state = WIFI_RECONNECT;

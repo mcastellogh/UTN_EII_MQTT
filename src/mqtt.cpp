@@ -1,4 +1,5 @@
 #include "mqtt.h"
+
 //--Instancies
 WiFiClientSecure wifi_client;    //With TLS
 PubSubClient mqtt(wifi_client);
@@ -35,7 +36,7 @@ bool broker_conn(void){
   _FSM_mqtt_crono = millis();
   while (!mqtt.connected()) {
     if (_mqtt_conn_retrys==0){
-      Serial.print(F("Intentando conexión a Broker MQTT ("));Serial.print(_mqtt_conn_retrys+1);Serial.print(") ");
+      Serial.print(F("Try to connect to Broker MQTT ("));Serial.print(_mqtt_conn_retrys+1);Serial.print(") ");
       Serial.print(config.mqtt_server);
       Serial.print(F(":"));
       Serial.print(config.mqtt_tcp);
@@ -48,7 +49,7 @@ bool broker_conn(void){
     _mqtt_conn_retrys++;
     if (_conn_mqtt_status) {
         _mqtt_conn_retrys=0;
-        Serial.println(F("Conectado a MQTT"));
+        Serial.println(F("Connected to MQTT"));
         broker_sub(topic_rpc);
         broker_sub(topic_attributes);
         _subscribe_status=1;
@@ -56,9 +57,9 @@ bool broker_conn(void){
     }
     if (millis() - _FSM_mqtt_crono >= WAITFORCONNECT_MQTT_TIMEOUT){
         _mqtt_conn_retrys=0;
-        Serial.print(F("Fallo de conexión MQTT, "));
+        Serial.print(F("Faill to connect to MQTT, "));
         Serial.print(_mqtt_conn_retrys);
-        Serial.print(F(" intentos. Error:"));
+        Serial.print(F(" trys. Error:"));
         Serial.println(mqtt.state());
         return false;
     }
@@ -151,7 +152,7 @@ bool broker_pub(const char* topic, const char* message){
 
 bool broker_sub(const char* topic){
     if (!mqtt.connected()){
-      Serial.println(F("No se pudo suscribir al topico"));
+      Serial.println(F("Not subscribed to topic"));
       return false;
     }
     mqtt.subscribe(topic);

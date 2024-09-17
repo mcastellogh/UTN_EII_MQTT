@@ -10,14 +10,14 @@
 // Licence:             GPLV3+
 // Version:             1.0.0
 // Date:                Julio 2024
-// Info:                Project 'WiFi' for Electrónica II
+// Info:                Project 'MQTT' for Electrónica II
 
 //====================[Use & storage]============================================
 // PCB:                 NodeMCU 
 // Plataforma:          ESP32 
-// Use:                 wifi
-// Folder:              wifi
-// Proyect name:        wifi
+// Use:                 mqtt
+// Folder:              mqtt
+// Proyect name:        mqtt
 
 //====================[ToDo]=====================================================     
 //        
@@ -32,13 +32,13 @@
 // Last commit:
 //
 //===================[End file header]===========================================
-bool mqtt_state=0;
-extern bool wifi_state;
+
 //--Includes
 #include "app.h"
 
 //--Local variables
-
+bool mqtt_state=0;
+extern bool wifi_state;
 
 //--Main application
 void App_loop(void){
