@@ -254,6 +254,3 @@ void broker_FSM_blink_led(uint8_t __mqtt_state){
     }
 }
 
-void rpc_proc(char* topic, byte* payload, unsigned int length){
-
-}

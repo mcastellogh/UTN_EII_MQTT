@@ -1,4 +1,5 @@
 #ifndef _cert_h_
+#define _cert_h_
 
 // SSL certificate for MQTT broker
 const char ca_cert[]

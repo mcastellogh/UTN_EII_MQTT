@@ -37,8 +37,8 @@ void App_setup(void){
 
     //--Init configs
     config.device="nivciscem01";
-    config.ssid="MAC_E";
-    config.ssid_pass="wpaadministrator08";
+    config.ssid="UTNFRRO";
+    config.ssid_pass="";
     config.ap_ssid=config.device;
     config.ap_pass="12345678";
     config.mqtt_server="192.168.1.25";
